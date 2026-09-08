@@ -1,5 +1,4 @@
 import keyboard
 
-keyboard.add_hotkey("del", lambda: keyboard.press("ctrl+c"), suppress=True)
-keyboard.add_hotkey("prtscn", lambda: keyboard.press("ctrl+v"), suppress=True)
+keyboard.add_hotkey("ctrl+f+i", lambda: keyboard.write('for i in :'), suppress=True)
 keyboard.wait("esc")
