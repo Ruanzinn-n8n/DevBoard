@@ -1,5 +1,5 @@
-import keyboard
+import pyperclip
 
-help(keyboard.block_key)
-
-keyboard.wait("esc")
+print(pyperclip.paste())
+pyperclip.copy("Cópia trocada!")
+print(pyperclip.paste())
