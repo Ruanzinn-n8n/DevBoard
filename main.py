@@ -1,10 +1,5 @@
 import keyboard
 
-while True:
-    if keyboard.press("q"):
-        print("Pressionou 'q' !!")
-    elif keyboard.press("w"):
-        print("Clicou em sair...")
-        break
-    else:
-        continue
+keyboard.add_hotkey("del", lambda: keyboard.press("ctrl+c"), suppress=True)
+keyboard.add_hotkey("prtscn", lambda: keyboard.press("ctrl+v"), suppress=True)
+keyboard.wait("esc")
