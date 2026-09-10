@@ -1,0 +1,6 @@
+[
+    {
+        "key": "del",
+        "post": "keyboard.add_hotkey('', lambda: functions.func_1(), suppress=True)"
+    }
+]

@@ -2,7 +2,7 @@ import keyboard
 import pyperclip
 import time
 
-def func_1(text):
+def func(text):
     clip_antigo = pyperclip.paste()
     pyperclip.copy(text)
     keyboard.send("ctrl+v")

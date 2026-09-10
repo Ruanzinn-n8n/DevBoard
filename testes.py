@@ -1,7 +1,10 @@
 import keyboard
-import time
+import json
 
-keyboard.start_recording()
-time.sleep(10)
-events = keyboard.stop_recording()
-keyboard.replay(events)
+with open("test.json", "r", encoding="utf-8") as arquivo:
+    funcoes = json.load(arquivo)
+key = funcoes[0]["key"]
+short = funcoes[0]["post"]
+
+keyboard.add_hotkey(key, lambda: keyboard.write(short), suppress=True)
+keyboard.wait("esc")
