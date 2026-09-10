@@ -1,5 +1,7 @@
-import pyperclip
+import keyboard
+import time
 
-print(pyperclip.paste())
-pyperclip.copy("Cópia trocada!")
-print(pyperclip.paste())
+keyboard.start_recording()
+time.sleep(10)
+events = keyboard.stop_recording()
+keyboard.replay(events)

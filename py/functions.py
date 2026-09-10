@@ -2,7 +2,7 @@ import keyboard
 import pyperclip
 import time
 
-def colar_text(text):
+def func_1(text):
     clip_antigo = pyperclip.paste()
     pyperclip.copy(text)
     keyboard.send("ctrl+v")
