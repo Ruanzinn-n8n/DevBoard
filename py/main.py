@@ -11,5 +11,3 @@ for i in funcoes:
     keyboard.add_hotkey(tecla, lambda t=text: functions.func(t), suppress=True)
 
 keyboard.wait("esc")
-
-layr e viado
