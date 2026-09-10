@@ -1,10 +1,17 @@
 import keyboard
-import json
+import time
 
-with open("test.json", "r", encoding="utf-8") as arquivo:
-    funcoes = json.load(arquivo)
-key = funcoes[0]["key"]
-short = funcoes[0]["post"]
-
-keyboard.add_hotkey(key, lambda: keyboard.write(short), suppress=True)
+dc = "y"
+while dc == "y":
+    event = keyboard.read_event()
+    name = event.name
+    time.sleep(0.5)
+    print(name)
+    dc = input("devo continuar? (y/n)").lower()
+    time.sleep(0.2)
+    if dc == "y":
+        continue
+    else:
+        break
+    
 keyboard.wait("esc")
