@@ -12,3 +12,4 @@ for i in funcoes:
 
 keyboard.wait("esc")
 
+layr e viado
