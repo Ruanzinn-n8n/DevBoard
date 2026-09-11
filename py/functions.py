@@ -8,3 +8,6 @@ def func(text):
     keyboard.send("ctrl+v")
     time.sleep(0.05)
     pyperclip.copy(clip_antigo)
+
+def cadastrar_tecla():
+    
