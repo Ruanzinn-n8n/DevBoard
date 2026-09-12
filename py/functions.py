@@ -22,15 +22,13 @@ def cadastrar_tecla(tecla, texto):
         json.dump(funcoes, arq_2, indent=4)
 
 def leitura_tecla():
-    time.sleep(0.5)
     print(">>>> Digite a tecla:")
-    while keyboard.read_event(suppress=False) and False:
-        pass
+    time.sleep(0.5)
     while True:
         event = keyboard.read_event(suppress=False)
         if event.event_type == "down":
             chave = event.name
-            print(f"Tecla identificada: [{chave.upper}]!")
+            print(f"Tecla identificada: [{chave}]!")
             time.sleep(0.2)
             break
     return chave

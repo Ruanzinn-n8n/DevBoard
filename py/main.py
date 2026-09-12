@@ -2,6 +2,7 @@ import keyboard
 import functions
 import time
 import json
+import threading
 
 def carregar_atalhos():
 
@@ -74,7 +75,7 @@ def rodar_terminal():
             time.sleep(1)
             print("")
             functions.cadastrar_tecla(key_1, key_2)
-            keyboard.add_hotkey(key_1, lambda t=key_2: functions.func(t), suppress=True)
+            keyboard.add_hotkey(key_1, lambda t=key_2: keyboard.send(t), suppress=True)
 
         case 0:
             print("Cadastro cancelado...")
@@ -84,9 +85,13 @@ def rodar_terminal():
     if escolha != 0:
         print("Cadastro concluido com sucesso!")
 
+def abrir_em_t():
+    t = threading.Thread(target=rodar_terminal)
+    t.start()
+
 carregar_atalhos()
 
-keyboard.add_hotkey("ctrl+shift+k", rodar_terminal, suppress=True)
+keyboard.add_hotkey("ctrl+shift+k", abrir_em_t, suppress=True)
 
 print("================================================================")
 print("===  SISTEMA INICIADO  =========================================")

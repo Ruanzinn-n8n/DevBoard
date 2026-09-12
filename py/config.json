@@ -18,9 +18,5 @@
     {
         "key": "end",
         "post": "keyboard."
-    },
-    {
-        "key": "ctrl+1",
-        "post": "testando"
     }
 ]
