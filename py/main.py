@@ -9,5 +9,6 @@ for i in funcoes:
     tecla = i["key"]
     text = i["post"]
     keyboard.add_hotkey(tecla, lambda t=text: functions.func(t), suppress=True)
+keyboard.add_hotkey("f1", lambda: functions.rodar_terminal(), suppress=True)
 
 keyboard.wait("esc")

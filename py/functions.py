@@ -27,20 +27,71 @@ def rodar_terminal():
     print("|===============================|")
     print("| Como deseja cadastrar?        |")
     print("|-------------------------------|")
-    print("|  1- Tecla única --> Texto     |")
-    print("|  2- Tecla única --> Atalho    |")
-    print("|  3- Atalho --> Texto          |")
-    print("|  4- Atalho --> Atalho         |")
+    print("|  1- Tecla --> Texto / Atalho  |")
+    print("|  2- Atalho --> Texto          |")
+    print("|  3- REMAP                     |")
     print("|  0- Cancelar                  |")
     print("|-------------------------------|")
     print("+===============================+")
+    print('  ------#OBS: O atalho deve seguir o seguinte formato: "key1+key2"')
+    print("")
 
     while True:
-        escolha = int(input)
-        if escolha < 0 or escolha > 4:
+        print("Escolha uma opção:")
+        escolha = int(input())
+        if escolha < 0 or escolha > 3:
             print("Opção inexistente!")
             print("digite novamente.....")
             print("")
         else:
             break
-    
+
+    match escolha:
+        case 1:
+            print("Digite a tecla:")
+            event = keyboard.read_event()
+            key = event.name
+            time.sleep(0.5)
+            print(f"Tecla identificada: {key}!")
+            print("Aguarde...")
+            time.sleep(1)
+            print("")
+            print("Digite o texto / atalho:")
+            text = input()
+            cadastrar_tecla(key, text)
+
+        case 2:
+            print("Digite o atalho:")
+            key = input()
+            print("Digite o texto:")
+            text = input()
+            cadastrar_tecla(key, text)
+
+        case 3:
+            print("Digite a tecla 1:")
+            event = keyboard.read_event()
+            key_1 = event.name
+            time.sleep(0.5)
+            print(f"Tecla identificada: {key_1}!")
+            print("Aguarde...")
+            time.sleep(1)
+            print("")
+            print("Digite a tecla 2:")
+            event = keyboard.read_event()
+            key_2 = event.name
+            time.sleep(0.5)
+            print(f"Tecla identificada: {key_2}!")
+            print("Aguarde...")
+            time.sleep(1)
+            print("")
+            cadastrar_tecla(key_1, key_2)
+
+        case 0:
+            print("Cadastro cancelado...")
+            time.sleep(1)
+            print("Até mais!")
+
+    if escolha != 0:
+        print("Cadastro concluido com sucesso!")
+    print("---- Clique ESC para sair")
+    keyboard.wait("esc")

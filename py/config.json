@@ -3,21 +3,24 @@
         "key": "del",
         "post": "keyboard.add_hotkey('', lambda: functions.func_1(), suppress=True)"
     },
-     {
+    {
         "key": "home",
         "post": "print()"
     },
-     {
+    {
         "key": "page up",
         "post": "for i in :"
     },
-     {
+    {
         "key": "page down",
         "post": "while True:\n    "
     },
-     {
+    {
         "key": "end",
         "post": "keyboard."
+    },
+    {
+        "key": "ctrl+0",
+        "post": "deu certinho"
     }
-
 ]
