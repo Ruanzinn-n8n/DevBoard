@@ -16,7 +16,9 @@ def carregar_atalhos():
             keyboard.add_hotkey(tecla, lambda t=text: functions.func(t), suppress=True)
 
     except (FileNotFoundError, json.JSONDecodeError):
-        print("Arquivo config.json não encontrado.")
+        print("Arquivo config.json não encontrado. Criando uma nova estrutura...")
+        with open("py/config.json", "w") as arquivo:
+            json.dump([], arquivo)
 
 def rodar_terminal():
     print("+===============================+")
@@ -93,9 +95,9 @@ carregar_atalhos()
 
 keyboard.add_hotkey("ctrl+shift+k", abrir_em_t, suppress=True)
 
-print("================================================================")
-print("===  SISTEMA INICIADO  =========================================")
+print("======================================================================")
+print("===  SISTEMA INICIADO  ===============================================")
 print("=== Pressione [Ctrl + Shift + K] a qualquer momento para abrir o menu ")
 print("=== Pressione [ESC] para encerrar o programa.")
-print("================================================================")
+print("======================================================================")
 keyboard.wait("esc")
