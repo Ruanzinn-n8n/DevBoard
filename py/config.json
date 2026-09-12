@@ -4,10 +4,6 @@
         "post": "keyboard.add_hotkey('', lambda: functions.func_1(), suppress=True)"
     },
     {
-        "key": "home",
-        "post": "print()"
-    },
-    {
         "key": "page up",
         "post": "for i in :"
     },
@@ -18,5 +14,9 @@
     {
         "key": "end",
         "post": "keyboard."
+    },
+    {
+        "key": "home",
+        "post": "print(\"\")"
     }
 ]
