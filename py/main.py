@@ -26,10 +26,11 @@ def rodar_terminal():
     print("|===============================|")
     print("| Como deseja cadastrar?        |")
     print("|-------------------------------|")
-    print("|  1- Tecla --> Texto / Atalho  |")
-    print("|  2- Atalho --> Texto          |")
+    print("|  1- Key --> Text / Shortcut   |")
+    print("|  2- Shortcut --> Text         |")
     print("|  3- REMAP                     |")
-    print("|  0- Cancelar                  |")
+    print("|  4- Remove shortcut           |")
+    print("|  0- Cancel                    |")
     print("|-------------------------------|")
     print("+===============================+")
     print('  ------#OBS: O atalho deve seguir o seguinte formato: "key1+key2"')
@@ -39,13 +40,13 @@ def rodar_terminal():
         print("Escolha uma opção:")
         try:
             escolha = int(input())
-            if 0 <= escolha <= 3:
+            if 0 <= escolha <= 4:
                 break
             print("Opção inexistente!")
             print("digite novamente.....")
             print("")
         except ValueError:
-            print("Digite apenas um número entre 0 e 3!\n")
+            print("Digite apenas um número entre 0 e 4!\n")
 
     match escolha:
         case 1:
@@ -79,13 +80,21 @@ def rodar_terminal():
             functions.cadastrar_tecla(key_1, key_2)
             keyboard.add_hotkey(key_1, lambda t=key_2: keyboard.send(t), suppress=True)
 
+        case 4:
+            print("Aguarde...")
+            time.sleep(1)
+            i = functions.remove_short()
+            print(f"Short [{i}] removido com sucesso!")
+
         case 0:
             print("Cadastro cancelado...")
             time.sleep(1)
             print("Até mais!")
 
-    if escolha != 0:
+    if escolha != 0 and escolha != 4:
         print("Cadastro concluido com sucesso!")
+    if escolha == 4:
+        print("Atalho removido com sucesso!")    
 
 def abrir_em_t():
     t = threading.Thread(target=rodar_terminal)
@@ -101,3 +110,4 @@ print("=== Pressione [Ctrl + Shift + K] a qualquer momento para abrir o menu ")
 print("=== Pressione [ESC] para encerrar o programa.")
 print("======================================================================")
 keyboard.wait("esc")
+

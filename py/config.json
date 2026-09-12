@@ -9,7 +9,7 @@
     },
     {
         "key": "page down",
-        "post": "while True:\n    "
+        "post": "while True:"
     },
     {
         "key": "end",
