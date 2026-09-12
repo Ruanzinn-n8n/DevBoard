@@ -85,6 +85,7 @@ def rodar_terminal():
             time.sleep(1)
             i = functions.remove_short()
             print(f"Short [{i}] removido com sucesso!")
+            carregar_atalhos()
 
         case 0:
             print("Cadastro cancelado...")
@@ -110,4 +111,3 @@ print("=== Pressione [Ctrl + Shift + K] a qualquer momento para abrir o menu ")
 print("=== Pressione [ESC] para encerrar o programa.")
 print("======================================================================")
 keyboard.wait("esc")
-

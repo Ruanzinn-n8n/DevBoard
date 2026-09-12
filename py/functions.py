@@ -55,7 +55,9 @@ def remove_short():
         except ValueError:
             print("Apenas números...")
     i = opc -1
+
+    removido = funcoes.pop(i)
     with open("py/config.json", "w", encoding="utf-8") as arquivo:
-        rem = json.load(arquivo)
-    removido = rem.pop(i)
+            rem = json.dump(funcoes, arquivo, indent=4)
+
     return ch
