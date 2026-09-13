@@ -4,7 +4,13 @@ import time
 import json
 import threading
 
+atalhos = []
 def carregar_atalhos():
+    global atalhos
+
+    for i in atalhos:
+        keyboard.remove_hotkey(i)
+    atalhos.clear()
 
     try:
         with open("py/config.json", "r", encoding="utf-8") as arquivo:
@@ -13,7 +19,8 @@ def carregar_atalhos():
         for i in funcoes:
             tecla = i["key"]
             text = i["post"]
-            keyboard.add_hotkey(tecla, lambda t=text: functions.func(t), suppress=True)
+            hotkey = keyboard.add_hotkey(tecla, lambda t=text: functions.func(t), suppress=True)
+            atalhos.append(hotkey)
 
     except (FileNotFoundError, json.JSONDecodeError):
         print("Arquivo config.json não encontrado. Criando uma nova estrutura...")
@@ -111,3 +118,5 @@ print("=== Pressione [Ctrl + Shift + K] a qualquer momento para abrir o menu ")
 print("=== Pressione [ESC] para encerrar o programa.")
 print("======================================================================")
 keyboard.wait("esc")
+print("Saindo do programa...")
+time.sleep(1)
