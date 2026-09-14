@@ -65,7 +65,7 @@ def rodar_terminal():
             print("Digite o texto / atalho:")
             text = input()
             functions.cadastrar_tecla(key, text)
-            keyboard.add_hotkey(key, lambda t=text: functions.func(t), suppress=True)
+            carregar_atalhos()
 
         case 2:
             print("Digite o atalho:")
@@ -73,7 +73,8 @@ def rodar_terminal():
             print("Digite o texto:")
             text = input()
             functions.cadastrar_tecla(key, text)
-            keyboard.add_hotkey(key, lambda t=text: functions.func(t), suppress=True)
+            carregar_atalhos()
+            #testar
 
         case 3:
             print("Aguarde...")
