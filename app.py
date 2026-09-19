@@ -22,7 +22,7 @@ class MinhaJanela(ctk.CTk):  #a classe cria a janela e é o pai de tudo.
 
         # e aqui criamos o botão
         self.btn = ctk.CTkButton(self, text="Clique aqui!", command=minha_funcao) # aqui criamos e obj
-        self.btn.pack(pady=20) # e aqui fazemos aparecer no programa
+        self.btn.pack(pady=20) # e aqui fazemos aparecer no programaa
 
 app = MinhaJanela()
 app.mainloop()
