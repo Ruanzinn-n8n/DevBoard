@@ -34,5 +34,8 @@ name.pack()
 prof = ctk.CTkLabel(tabview.tab("Profissões"), text = "predero\narquiteto\ncaminhao")
 prof.pack()
 
+sal = ctk.CTkLabel(tabview.tab("Salarios"), text = "1300\n1000\n5000\n3500")
+sal.pack()
+
 
 janela.mainloop()
